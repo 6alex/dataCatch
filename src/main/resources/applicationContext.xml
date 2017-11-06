@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:jaxws="http://cxf.apache.org/jaxws"
+ xmlns:soap="http://cxf.apache.org/bindings/soap"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/bindings/soap 
+http://cxf.apache.org/schemas/configuration/soap.xsd
+http://cxf.apache.org/jaxws 
+http://cxf.apache.org/schemas/jaxws.xsd">
+ <!-- 注册一个代理对象，这个对象是由 spring 框架注入的，通过这个代理对象可以实现远程调用 -->
+ <jaxws:client id="cfxClient"
+ address="http://localhost:9999/CXF_01/service/hello"
+ serviceClass="com.wen.HelloWorld"/>
+</beans>
